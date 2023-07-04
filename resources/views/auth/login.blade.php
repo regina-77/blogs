@@ -56,7 +56,7 @@
                             <h3>Sign Up</h3>
                         </div>
 
-                        <form method="POST" action="{{ route('home') }}">
+                        <form method="POST" action="{{ route('login') }}">
                             @csrf
                             
                             <div class="form-floating mb-3">
@@ -83,7 +83,7 @@
                             </div>
                             
                             <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
-                            <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p>
+                            <p class="text-center mb-0">Don't have an Account? <a href="{{ route('register') }}">Sign Up</a></p>
                         </form>
                     </div>
                 </div>

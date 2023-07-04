@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Writer\WriterDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,8 @@ Route::get('/', function () {
 
  Auth::routes();
 
-Route::post('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/storeuser', [UserController ::class, 'storeuser'])->name('storeuser');
-Route::get('/userdashboard', [UserController ::class, 'index'])->name('dashboard');
+Route::get('/userdashboard', [UserController::class, 'index'])->name('dashboard');
+Route::get('/writerdashboard', [WriterDashboardController::class, 'index'])->name('writerdashboard');
+                                                                                                            	                                                                                                                                                                                                                                                                                                                                                                                        

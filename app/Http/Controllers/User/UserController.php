@@ -7,7 +7,14 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
+
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function storeuser(Request $request)
     {
         $this->validate($request,
@@ -26,7 +33,12 @@ class UserController extends Controller
         $add->phone= $request->phone;
         $add->password= bcrypt($request->password);
         $add->save();
-        $add->assignRole('user');
+        $add->assignRole('writer');
 
+        return to_route('home');
     }
+
+    public function index(){
+        return view('user.dashboard');
+        }
 }
