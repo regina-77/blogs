@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Admindashboard;
 use App\Http\Controllers\Editor\Editordashboard;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Writer\WriterDashboardController;
@@ -28,4 +29,5 @@ Route::post('/storeuser', [UserController ::class, 'storeuser'])->name('storeuse
 Route::get('/userdashboard', [UserController::class, 'index'])->name('dashboard');
 Route::get('/writerdashboard', [WriterDashboardController::class, 'index'])->name('writerdashboard');
 Route::get('/editordashboard', [Editordashboard::class, 'index'])->name('editordashboard');
-                                                                                	                                                                                                                                                                                                                                                                                                                                                                                        
+Route::get('/admindashboard', [Admindashboard::class, 'index'])->name('admindashboard');
+                                                                 	                                                                                                                                                                                                                                                                                                                                                                                        
