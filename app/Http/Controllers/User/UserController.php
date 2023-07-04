@@ -33,7 +33,7 @@ class UserController extends Controller
         $add->phone= $request->phone;
         $add->password= bcrypt($request->password);
         $add->save();
-        $add->assignRole('writer');
+        $add->assignRole('editor');
 
         return to_route('home');
     }
