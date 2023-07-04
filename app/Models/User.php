@@ -21,6 +21,7 @@ use HasRoles;
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
     ];
 

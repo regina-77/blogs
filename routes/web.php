@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\User\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+ Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/storeuser', [UserController ::class, 'storeuser'])->name('storeuser');
+Route::get('/userdashboard', [UserController ::class, 'index'])->name('dashboard');

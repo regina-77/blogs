@@ -58,7 +58,7 @@
                         <a href="#" class="nav-link" >Contact Us</a>
                      </li>
                      <li class="nav-item">
-                        <a  href="{{route('register')}}" class="nav-link">Sign Up</a>
+                        <a  href="" class="nav-link">Log Out</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#"><img src="{{asset('front/images/serach-icon.png')}}"></a>
