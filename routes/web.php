@@ -31,4 +31,5 @@ Route::get('/userdashboard', [UserController::class, 'index'])->name('dashboard'
 Route::get('/writerdashboard', [WriterDashboardController::class, 'index'])->name('writerdashboard');
 Route::get('/editordashboard', [EditordashboardController ::class, 'index'])->name('editordashboard');
 Route::get('/admindashboard', [AdminDashboardController ::class, 'index'])->name('admindashboard');
+Route::get('/createjob', [AdminDashboardController ::class, 'createjob'])->name('createjob');	
                                                                  	                                                                                                                                                                                                                                                                                                                                                                                        

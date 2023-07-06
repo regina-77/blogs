@@ -55,11 +55,7 @@
                                 <label for="floatingInput">Full name</label>
                             </div>
                                 @error('name')
-                                {{-- error messages not being displayed because of the styling lasses
-                                    umeelewa? yeah
-                                    hapo job migration iko sawa?
-                                    hapa kazini ama? hPANA
-                                    --}}
+                              
                                     <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
