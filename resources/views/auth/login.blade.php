@@ -65,7 +65,7 @@
                                 <label for="floatingInput">Email address</label>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -76,7 +76,7 @@
                                 <label for="floatingPassword">Password</label>
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror

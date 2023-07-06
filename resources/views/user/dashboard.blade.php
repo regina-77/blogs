@@ -58,7 +58,11 @@
                         <a href="#" class="nav-link" >Contact Us</a>
                      </li>
                      <li class="nav-item">
-                        <a  href="" class="nav-link">Log Out</a>
+                        <a  href="{{ route('logout') }}" class="nav-link"  onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">Log Out</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                           @csrf
+                       </form>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#"><img src="{{asset('front/images/serach-icon.png')}}"></a>

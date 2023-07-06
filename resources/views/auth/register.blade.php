@@ -34,23 +34,14 @@
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner"
-            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-
+      
         <!-- Sign Up Start -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <a href="index.html" class="">
+                            <a href="{{ url('/') }}" class="">
                                 <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>BLOGGING ART</h3>
                             </a>
                             <h3>Sign Up</h3>
@@ -64,7 +55,12 @@
                                 <label for="floatingInput">Full name</label>
                             </div>
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                {{-- error messages not being displayed because of the styling lasses
+                                    umeelewa? yeah
+                                    hapo job migration iko sawa?
+                                    hapa kazini ama? hPANA
+                                    --}}
+                                    <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -75,7 +71,7 @@
                                 <label for="floatingInput">Email address</label>
                             </div>
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -86,7 +82,7 @@
                                 <label for="floatingInput">Phone_Number</label>
                             </div>
                                 @error('phone')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -97,7 +93,7 @@
                                 <label for="floatingPassword">Password</label>
                             </div>
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -108,7 +104,7 @@
                                 <label for="floatingPassword">Password Confirmation</label>
                             </div>
                                 @error('password_confirmation')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror

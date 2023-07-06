@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Admindashboard extends Controller
+class AdminDashboardController extends Controller
 {
     public function index(){
         return view('admin.admindashboard');

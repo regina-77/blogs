@@ -26,13 +26,18 @@ class HomeController extends Controller
     {
         $user = User::where('id', auth()->user()->id)->first();
         $role = $user->getRoleNames()->first();
+  
         if ($role == 'admin') {
             return to_route('admindashboard');
         } elseif ($role == 'writer') {
             return to_route('writerdashboard');
-        } else {
+        }
+        elseif($role=='editor'){
+            return to_route('editordashboard');
+        }
+        else {
             return to_route('dashboard');
         }
-        // return view('home');
+         // return view('home');
     }
 }

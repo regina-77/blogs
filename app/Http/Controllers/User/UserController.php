@@ -9,14 +9,12 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+   
 
 
     public function storeuser(Request $request)
     {
+        
         $this->validate($request,
             [
                 'name' => 'required|string|min:3',
