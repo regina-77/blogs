@@ -35,6 +35,9 @@ class HomeController extends Controller
         elseif($role=='editor'){
             return to_route('editordashboard');
         }
+        elseif($role=='employer'){
+            return to_route('employerdashboard');
+        }
         else {
             return to_route('dashboard');
         }

@@ -1,23 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Employer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Job;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
-class AdminDashboardController extends Controller
+class EmployeeTaskController extends Controller
 {
-    public function index()
-    {
-        return view('admin.admindashboard');
-    }
     public function createjob()
     {
-        return view('admin.createjob');
+        return view('employer.jobs.create-jobs');
     }
-    public function adminstorejob(Request $request)
+
+    public function storejob(Request $request)
     {
 
         $this->validate($request, [
@@ -27,7 +24,7 @@ class AdminDashboardController extends Controller
             'description' => 'required|string',
         ]);
 
-        $checkJobexists = Job::where('user_id', auth()->user()->id)->where('name', 'like', '%' . $request->name . '%')->first();
+        $checkJobexists = Job::where('user_id', auth()->user()->id)->where('name', 'like', '%' . $request->name . '%')->where('description', 'like', '%' . $request->description . '%')->first();
 
         if ($checkJobexists) {
 
@@ -56,13 +53,12 @@ class AdminDashboardController extends Controller
             $add->save();
 
             Toastr::success('You have successfully uploaded your job.',  ["positionClass" => "toast-top-right"]);
-            // i guess the most appropriate page to redirect after adding new job is to the list of ther jobs,, other than taking the user to home page, then again he has to click to view the list of all jobs
-            return to_route('admin.adminviewjobs');
+            return to_route('employer.alljobs');
         }
     }
-    public function adminviewjob()
+    public function alljobs()
     {
-        $jobs = Job::all();
-        return view('admin.viewjobs', compact('jobs'));
+        $jobs= Job::all()->where('user_id', auth()->user()->id);
+        return view('employer.jobs.my-jobs' ,compact('jobs'));
     }
 }

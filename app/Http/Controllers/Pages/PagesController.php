@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
-
+class PagesController extends Controller
 {
-
-
-
-    public function storeuser(Request $request)
+    public function writerregister(){
+        return view('auth.create-writer-account');
+    }
+    public function storewriter(Request $request)
     {
 
         $this->validate(
@@ -32,13 +31,10 @@ class UserController extends Controller
         $add->phone = $request->phone;
         $add->password = bcrypt($request->password);
         $add->save();
-        $add->assignRole('employer');
+        $add->assignRole('writer');
 
         return to_route('login');
     }
 
-    public function index()
-    {
-        return view('user.dashboard');
-    }
+    
 }

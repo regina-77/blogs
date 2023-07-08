@@ -61,48 +61,48 @@
                             {{-- <a href="{{ url('/') }}" class=""> --}}
                             <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Add Job</h3>
                             </a>
-
                         </div>
-
-                        <form method="POST" action="#">
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                            @endforeach
+                        @endif
+                        <form method="POST" action="{{ route('adminstorejob') }}">
                             @csrf
                             <div class="form-floating mb-3">
                                 <input type="text" name="name" class="form-control" id="floatingInput"
-                                autocomplete="off" value="{{ old('name')}}">
-                                <label for="floatingInput">Task name</label>
+                                    autocomplete="off" value="{{ old('name') }}">
+                                <label for="floatingInput">Task Tittle</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" name="name"  list="datalistOptions" class="form-control" id="floatingInput" autocomplete="off" value="{{ old('category')}}">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category">
+                                <option value="">Open this select category</option>
+                                <option value="Technology">Technology</option>
+                                <option value="medicine">Medicine</option>
+                                <option value="sports">Sports</option>
+                                <option value="Nutrition">Nutrition</option>
+                                <option value="Finance">Finance</option>
+                            </select>
                             
-                                    <datalist id="datalistOptions">
-                                        <option value="Technology">
-                                        <option value="medicine">
-                                        <option value="sports">
-                                        <option value="Nutrition">
-                                        <option value="Finance">
-                                    </datalist>
-                                
-                                <label for="floatingInput">Category</label>
-                            </div>
 
 
                             <div class="form-floating mb-3">
                                 <input type="text" name="description" class="form-control" id="floatingInput"
-                                    placeholder="enter task description" autocomplete="off" value="{{ old('description')}}">
+                                    placeholder="enter task description" autocomplete="off"
+                                    value="{{ old('description') }}">
                                 <label for="floatingInput">description</label>
                             </div>
 
 
                             <div class="form-floating mb-3">
                                 <input type="date" name="deadline" class="form-control" id="floatingInput"
-                                    placeholder="Enter deadline date" autocomplete="off" value="{{ old('deadline')}}">
+                                    placeholder="Enter deadline date" autocomplete="off" value="{{ old('deadline') }}">
                                 <label for="floatingInput">Deadline</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                         <button type="submit"id="floatingInput"@class(['p-2','bg-success', 'font-bold' => true])  >submit</button>
-                        </div>
-                         
+                                <button type="submit"id="floatingInput"@class(['p-2', 'bg-success', 'font-bold' => true])>submit</button>
+                            </div>
+
 
 
                         </form>

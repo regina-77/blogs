@@ -43,23 +43,22 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/">Home</a>
+                     </li>
+                     
+                     <li class="nav-item">
+                        <a  href="{{route('login')}}" class="nav-link">Admin</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a  href="{{route('register')}}" class="nav-link">Employer</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a  href="{{route('writer_register')}}" class="nav-link">Writer</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a  href="{{route('login')}}" class="nav-link">Log In</a>
                      </li>
-                     <li class="nav-item">
-                        <a href="#" class="nav-link" >Contact Us</a>
-                     </li>
-                     <li class="nav-item">
-                        <a  href="{{route('register')}}" class="nav-link">Sign Up</a>
-                     </li>
+                     
                      <li class="nav-item">
                         <a class="nav-link" href="#"><img src="{{asset('front/images/serach-icon.png')}}"></a>
                      </li>

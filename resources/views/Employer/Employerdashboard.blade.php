@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>darkPan - Bootstrap 5 Admin Template</title>
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,14 +34,21 @@
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
-     
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
 
 
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>darkPan</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -62,11 +69,11 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class="fa fa-laptop me-2"></i>Jobs</a>
-                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('createjob') }}" class="dropdown-item">create job</a>
-                            <a href="typography.html" class="dropdown-item">view jobs</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{ route('createjob') }}" class="dropdown-item">create job</a>
+                            <a href="{{ route('viewjobs') }}" class="dropdown-item">view jobs</a>
                             {{-- <a href="element.html" class="dropdown-item">Other Elements</a> --}}
-                        </div> 
+                        </div>
                     </div>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Total Submitted</i></a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Total Paid</a>
@@ -86,12 +93,11 @@
         </div>
         </nav>
     </div>
-    @yield('content')
     <!-- Sidebar End -->
 
 
     <!-- Content Start -->
-    {{-- <div class="content">
+    <div class="content">
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
             <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
@@ -422,7 +428,7 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div> --}}
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

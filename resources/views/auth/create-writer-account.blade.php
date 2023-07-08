@@ -42,12 +42,12 @@
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="{{ url('/') }}" class="">
-                                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>BLOGGING ART</h3>
+                                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Writer account</h3>
                             </a>
                             <h3>Sign Up</h3>
                         </div>
 
-                        <form method="POST" action="{{ route('storeuser') }}">
+                        <form method="POST" action="{{ route('storewriter') }}">
                             @csrf
                             <div class="form-floating mb-3">
                                 <input type="text" name="name" class="form-control" id="floatingInput"
