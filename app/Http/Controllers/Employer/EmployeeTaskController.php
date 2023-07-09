@@ -7,6 +7,7 @@ use App\Models\Job;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
+
 class EmployeeTaskController extends Controller
 {
     public function createjob()
@@ -58,7 +59,9 @@ class EmployeeTaskController extends Controller
     }
     public function alljobs()
     {
-        $jobs= Job::all()->where('user_id', auth()->user()->id);
-        return view('employer.jobs.my-jobs' ,compact('jobs'));
+        $jobs = Job::all()->where('user_id', auth()->user()->id);
+        return view('employer.jobs.my-jobs', compact('jobs'));
     }
+
+  
 }

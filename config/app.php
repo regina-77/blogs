@@ -170,6 +170,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Brian2694\Toastr\ToastrServiceProvider::class,
+        
+	Srmklive\PayPal\Providers\PayPalServiceProvider::class
 
     ])->toArray(),
 
@@ -187,6 +189,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
+        'PayPal' => Srmklive\PayPal\Facades\PayPal::class
     ])->toArray(),
 
 ];

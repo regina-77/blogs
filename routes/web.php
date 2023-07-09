@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\Editor\EditordashboardController;
 use App\Http\Controllers\Employer\EmployeeTaskController;
 use App\Http\Controllers\Employer\EmployerdashboardController;
+use App\Http\Controllers\Employer\EmployerPaypalOrderPaymentController;
 use App\Http\Controllers\Pages\PagesController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Writer\WriterDashboardController;
@@ -43,9 +44,12 @@ Route::get('/createjob', [EmployeeTaskController ::class, 'createjob'])->name('c
                         
 
 Route::middleware(['auth','role:employer'])->prefix('employer')->name('employer.')->group(function () {
-    Route::get('/createjob', [EmployeeTaskController ::class, 'createjob'])->name('createjob');	
-    Route::post('/storejob', [EmployeeTaskController ::class, 'storejob'])->name('storejob');	
-    Route::get('/my-jobs', [EmployeeTaskController ::class, 'alljobs'])->name('alljobs');	
+    Route::get('/createjob', [EmployeeTaskController::class, 'createjob'])->name('createjob');	
+    Route::post('/storejob', [EmployeeTaskController::class, 'storejob'])->name('storejob');	
+    Route::get('/my-jobs', [EmployeeTaskController::class, 'alljobs'])->name('alljobs');	
+    Route::get('/pay-order/{slug}', [EmployerPaypalOrderPaymentController::class, 'payorder'])->name('payorder');	
+    Route::get('/paypal-payment-success/{slug}', [EmployerPaypalOrderPaymentController::class, 'paymentsuccess']);	
+    Route::get('/paypal-payment-cancel/{slug}', [EmployerPaypalOrderPaymentController::class, 'paymentcancel']);	
  
 });
 Route::middleware(['auth','role:writer'])->prefix('writer')->name('writer.')->group(function () {

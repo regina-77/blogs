@@ -15,12 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('payment_id');
             $table->string('payer_id');
-            $table->string('order_id');
+            $table->unsignedBigInteger('order_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('payment_status');
             $table->string('country_code');
             $table->string('payment_email');
             $table->string('payment_amount');
             $table->string('payment_currency');
+            $table->foreign('order_id')->references('id')->on('jobs')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

@@ -2,8 +2,8 @@
     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
             class="fa fa-laptop me-2"></i>Jobs</a>
     <div class="dropdown-menu bg-transparent border-0">
-        <a href="{{ route('employer.createjob') }}" class="dropdown-item">create job</a>
-        <a href="{{ route('viewjobs') }}" class="dropdown-item">view jobs</a>
+        <a href="{{ route('employer.createjob') }}" class="dropdown-item">Create Job</a>
+        <a href="{{ route('employer.alljobs') }}" class="dropdown-item">View Jobs</a>
         {{-- <a href="element.html" class="dropdown-item">Other Elements</a> --}}
     </div>
 </div>
